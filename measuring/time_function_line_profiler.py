@@ -1,4 +1,5 @@
 import hashlib
+import profile
 
 
 @profile
