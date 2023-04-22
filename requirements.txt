@@ -1,1 +1,1 @@
-pytest-bench
+pytest-benchmark~=4.0
