@@ -1,7 +1,7 @@
 import hashlib
-import time
 
 
+@profile
 def chain_sha1_hash(input_str, iterations):
     current_hash = input_str
     for _ in range(iterations):
@@ -11,10 +11,4 @@ def chain_sha1_hash(input_str, iterations):
 
 if __name__ == "__main__":
     input_str = "Turbocharge Your Python Code"
-
-    start_time = time.time()
     result = chain_sha1_hash(input_str, 100_000)
-    end_time = time.time()
-
-    elapsed_time = end_time - start_time
-    print(f"Time taken: {elapsed_time:.2f} seconds")
