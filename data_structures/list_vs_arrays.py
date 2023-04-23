@@ -1,6 +1,6 @@
 import numpy as np
 import random
-from line_profiler import LineProfiler
+from line_profiler import LineProfiler  # type: ignore
 
 
 def double_list(initial_list):

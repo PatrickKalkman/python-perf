@@ -1,7 +1,7 @@
 import random
 import string
 import timeit
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt  # type: ignore
 
 plt.style.use("ggplot")
 
