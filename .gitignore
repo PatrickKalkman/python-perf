@@ -4,6 +4,7 @@ __pycache__/
 *$py.class
 
 .DS_Store
+*.lprof
 
 # C extensions
 *.so
@@ -56,6 +57,7 @@ cover/
 # Translations
 *.mo
 *.pot
+*.jpg
 
 # Django stuff:
 *.log
