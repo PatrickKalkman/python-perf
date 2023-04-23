@@ -2,10 +2,12 @@ import threading
 import urllib.request
 import time
 
+
 def download_image(image_url, save_as):
     print(f"Downloading {image_url}...")
     urllib.request.urlretrieve(image_url, save_as)
     print(f"Downloaded {image_url} as {save_as}.")
+
 
 base_url = "https://commons.wikimedia.org/wiki/Special:NewFiles#/media/File:"
 image_urls = [
@@ -28,7 +30,8 @@ start_time = time.time()
 threads = []
 
 for i, image_url in enumerate(image_urls):
-    thread = threading.Thread(target=download_image, args=(image_url, f"image_threaded{i+1}.jpg"))
+    thread = threading.Thread(target=download_image,
+                              args=(image_url, f"image_threaded{i+1}.jpg"))
     threads.append(thread)
     thread.start()
 
@@ -38,4 +41,4 @@ for thread in threads:
 multithreaded_time = time.time() - start_time
 print(f"\nMultithreaded download time: {multithreaded_time:.2f} seconds\n")
 
-print(f"Performance improvement using threads: {sequential_time/multithreaded_time:.2f} times")
+print(f"Perf impr using threads: {sequential_time/multithreaded_time:.2f}x")

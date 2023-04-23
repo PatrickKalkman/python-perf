@@ -1,5 +1,11 @@
 import random
 
+# This is a no-op if line_profiler is not installed
+if 'profile' not in globals():
+    def profile(func):
+        return func
+
+
 @profile
 def search_items(items_to_search, collection):
     count = 0
@@ -7,6 +13,7 @@ def search_items(items_to_search, collection):
         if item in collection:
             count += 1
     return count
+
 
 @profile
 def main():
@@ -24,6 +31,7 @@ def main():
     print(f"Found {count_list} items in list")
     print(f"Found {count_set} items in set")
     print(f"Found {count_tuple} items in tuple")
+
 
 if __name__ == "__main__":
     main()

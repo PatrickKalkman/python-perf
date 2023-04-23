@@ -1,6 +1,12 @@
 from collections import namedtuple
 from dataclasses import dataclass
 
+# This is a no-op if line_profiler is not installed
+if 'profile' not in globals():
+    def profile(func):
+        return func
+
+
 @profile
 def create_datastructures():
     size = 100000
@@ -23,8 +29,10 @@ def create_datastructures():
 
     return d, namedtuples, dataclasses
 
+
 def main():
     create_datastructures()
+
 
 if __name__ == "__main__":
     main()

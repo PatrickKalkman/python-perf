@@ -1,6 +1,12 @@
 import random
 import string
 
+# This is a no-op if line_profiler is not installed
+if 'profile' not in globals():
+    def profile(func):
+        return func
+
+
 # Generate a large dataset
 data = {"".join(random.choices(string.ascii_lowercase, k=10)):
         random.randint(1, 100) for _ in range(100000)}
