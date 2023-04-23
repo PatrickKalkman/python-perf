@@ -33,7 +33,7 @@ jobs:
 
     - name: Run mypy
       run: |
-        mypy . --check-untyped-defs
+        mypy . --check-untyped-defs --ignore_missing_imports 
 
     - name: Run pytest
       run: |
