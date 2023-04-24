@@ -3,7 +3,8 @@ from typing import List
 
 
 # This is a no-op if line_profiler is not installed
-if 'profile' not in globals():
+if "profile" not in globals():
+
     def profile(func):
         return func
 

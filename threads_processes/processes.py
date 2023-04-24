@@ -31,9 +31,10 @@ def main():
     processes = []
 
     for i, image_url in enumerate(image_urls):
-        process = multiprocessing.Process(target=download_image,
-                                          args=(image_url,
-                                                f"image_processed{i+1}.jpg"))
+        process = multiprocessing.Process(
+            target=download_image,
+            args=(image_url, f"image_processed{i+1}.jpg"),
+        )
         processes.append(process)
         process.start()
 

@@ -19,7 +19,7 @@ lp = LineProfiler()
 lp.add_function(double_list)
 lp.add_function(double_array)
 
-lp.runctx('double_list(initial_list)', globals(), locals())
-lp.runctx('double_array(initial_array)', globals(), locals())
+lp.runctx("double_list(initial_list)", globals(), locals())
+lp.runctx("double_array(initial_array)", globals(), locals())
 
 lp.print_stats()

@@ -2,14 +2,19 @@ import random
 import string
 
 # This is a no-op if line_profiler is not installed
-if 'profile' not in globals():
+if "profile" not in globals():
+
     def profile(func):
         return func
 
 
 # Generate a large dataset
-data = {"".join(random.choices(string.ascii_lowercase, k=10)):
-        random.randint(1, 100) for _ in range(100000)}
+data = {
+    "".join(random.choices(string.ascii_lowercase, k=10)): random.randint(
+        1, 100
+    )
+    for _ in range(100000)
+}
 
 
 @profile
@@ -34,8 +39,10 @@ def main(hit_ratio):
     num_missing_keys = num_keys_to_check - num_present_keys
 
     present_keys = random.sample(list(data.keys()), num_present_keys)
-    missing_keys = ["".join(random.choices(string.ascii_lowercase, k=10))
-                    for _ in range(num_missing_keys)]
+    missing_keys = [
+        "".join(random.choices(string.ascii_lowercase, k=10))
+        for _ in range(num_missing_keys)
+    ]
 
     keys_to_check = present_keys + missing_keys
     random.shuffle(keys_to_check)

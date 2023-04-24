@@ -30,8 +30,9 @@ start_time = time.time()
 threads = []
 
 for i, image_url in enumerate(image_urls):
-    thread = threading.Thread(target=download_image,
-                              args=(image_url, f"image_threaded{i+1}.jpg"))
+    thread = threading.Thread(
+        target=download_image, args=(image_url, f"image_threaded{i+1}.jpg")
+    )
     threads.append(thread)
     thread.start()
 

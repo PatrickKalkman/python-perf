@@ -1,7 +1,8 @@
 import random
 
 # This is a no-op if line_profiler is not installed
-if 'profile' not in globals():
+if "profile" not in globals():
+
     def profile(func):
         return func
 
@@ -12,12 +13,12 @@ def random_numbers(n):
 
 @profile
 def list_comprehension(numbers):
-    return [x ** 2 for x in numbers]
+    return [x**2 for x in numbers]
 
 
 @profile
 def generator_expression(numbers):
-    return (x ** 2 for x in numbers)
+    return (x**2 for x in numbers)
 
 
 def main():
